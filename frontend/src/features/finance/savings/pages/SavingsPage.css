@@ -1,0 +1,255 @@
+.savings-page {
+  padding: 32px;
+  min-height: 100%;
+  background: #f8fafc;
+}
+
+/* Header */
+
+.savings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.savings-header h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.savings-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.savings-header strong {
+  color: #334155;
+}
+
+/* Entry Button */
+
+.savings-entry-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.savings-entry-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Card */
+
+.savings-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.savings-card-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.savings-card-header h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  color: #0f172a;
+}
+
+.savings-card-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Table */
+
+.savings-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.savings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.savings-table th {
+  padding: 15px 24px;
+  text-align: left;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.savings-table td {
+  padding: 18px 24px;
+  color: #475569;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.savings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.savings-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.savings-table td strong {
+  color: #0f172a;
+}
+
+/* Amount */
+
+.saving-amount {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* View Details */
+
+.view-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+
+  padding: 8px 12px;
+
+  background: white;
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.view-details-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* Loading */
+
+.savings-loading {
+  padding: 60px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Error */
+
+.savings-error {
+  padding: 30px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #b91c1c;
+}
+
+/* Empty */
+
+.empty-savings {
+  text-align: center !important;
+  padding: 50px !important;
+  color: #94a3b8 !important;
+}
+
+.savings-header-actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.month-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.month-filter label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.month-filter input {
+  min-width: 170px;
+  padding: 11px 36px 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #334155;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.month-filter input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .savings-page {
+    padding: 20px;
+  }
+
+  .savings-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .savings-header h1 {
+    font-size: 25px;
+  }
+
+  .savings-entry-btn {
+    white-space: nowrap;
+  }
+
+  .savings-table th,
+  .savings-table td {
+    padding: 14px 16px;
+  }
+
+  .savings-header-actions {
+  width: 100%;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.month-filter select {
+  width: 100%;
+}
+
+.savings-entry-btn {
+  width: 100%;
+}
+
+}

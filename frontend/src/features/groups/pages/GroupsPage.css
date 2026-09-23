@@ -1,0 +1,437 @@
+.groups-page {
+  padding: 32px;
+}
+
+.groups-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.groups-header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.groups-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* ================================
+   Add Group Button
+================================ */
+
+.primary-button {
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+/* ================================
+   Groups Grid
+================================ */
+
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ================================
+   Group Card
+================================ */
+
+.group-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 24px;
+
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.group-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.group-card p {
+  margin: 0;
+  color: #64748b;
+}
+
+.group-card span {
+  font-size: 22px;
+}
+
+/* ================================
+   Group Modal
+================================ */
+
+.group-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  z-index: 1000;
+}
+
+.group-modal {
+  width: 100%;
+  max-width: 500px;
+
+  background: white;
+  border-radius: 14px;
+
+  padding: 28px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.group-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.group-modal-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.group-modal-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.group-modal-close {
+  border: none;
+  background: transparent;
+
+  font-size: 28px;
+  line-height: 1;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+/* ================================
+   Group Form
+================================ */
+
+.group-form-field {
+  margin-bottom: 20px;
+}
+
+.group-form-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.group-form-field input,
+.group-form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 11px 13px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  outline: none;
+}
+
+.group-form-field input:focus,
+.group-form-field textarea:focus {
+  border-color: #2563eb;
+}
+
+.group-form-field textarea {
+  resize: vertical;
+}
+
+.group-form-error {
+  margin: 0 0 16px;
+
+  color: #dc2626;
+  font-size: 14px;
+}
+
+/* ================================
+   Form Actions
+================================ */
+
+.group-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.group-cancel-button,
+.group-create-button {
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.group-cancel-button {
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+}
+
+.group-create-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+}
+
+.group-create-button:disabled,
+.group-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   Groups Table
+================================ */
+
+.groups-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.groups-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.groups-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.groups-table th {
+  padding: 15px 18px;
+
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;
+  white-space: nowrap;
+}
+
+.groups-table td {
+  padding: 17px 18px;
+
+  border-bottom: 1px solid #eef2f7;
+
+  color: #334155;
+  font-size: 14px;
+}
+
+.groups-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.groups-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ================================
+   Table Content
+================================ */
+
+.group-name-cell strong {
+  color: #172033;
+  font-size: 15px;
+}
+
+.group-description {
+  color: #64748b;
+}
+
+.subgroup-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 30px;
+  height: 30px;
+
+  padding: 0 8px;
+
+  border-radius: 6px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-weight: 600;
+}
+
+/* ================================
+   Table Action Button
+================================ */
+
+.group-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+
+  padding: 8px 12px;
+
+  background: white;
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.group-action-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ================================
+   Table Messages
+================================ */
+
+.table-message {
+  padding: 50px 20px !important;
+
+  text-align: center !important;
+
+  color: #64748b !important;
+}
+
+.table-message.error {
+  color: #dc2626 !important;
+}
+
+/* ================================
+   Empty Groups
+================================ */
+
+.empty-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty-groups svg {
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.empty-groups h3 {
+  margin: 0;
+
+  color: #334155;
+  font-size: 17px;
+}
+
+.empty-groups p {
+  margin: 0 0 12px;
+
+  color: #64748b;
+}
+
+.add-group-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.add-group-btn:hover {
+  background: #1d4ed8;
+}
+
+.add-group-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

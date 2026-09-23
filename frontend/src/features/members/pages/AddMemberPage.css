@@ -1,0 +1,334 @@
+
+/* ========================================
+   Add Member Page
+======================================== */
+
+.add-member-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.add-member-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 16px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: color 0.15s ease;
+}
+
+.back-btn:hover {
+  color: #4f46e5;
+}
+
+.add-member-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.add-member-header p {
+  margin-top: 5px;
+
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ========================================
+   Form
+======================================== */
+
+.member-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   Form Sections
+======================================== */
+
+.member-form-section {
+  padding: 24px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.form-section-header {
+  margin-bottom: 22px;
+}
+
+.form-section-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.form-section-header p {
+  margin-top: 4px;
+
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ========================================
+   Form Grid
+======================================== */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* ========================================
+   Labels
+======================================== */
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group label span {
+  color: #ef4444;
+}
+
+/* ========================================
+   Inputs
+======================================== */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #818cf8;
+
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+/* ========================================
+   Input Prefix
+======================================== */
+
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.input-with-prefix:focus-within {
+  border-color: #818cf8;
+
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+.input-with-prefix span {
+  padding-left: 13px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-with-prefix input {
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.input-with-prefix input:focus {
+  box-shadow: none;
+}
+
+/* ========================================
+   Helper Text
+======================================== */
+
+.form-group small {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #94a3b8;
+}
+
+/* ========================================
+   Form Actions
+======================================== */
+
+.member-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 4px 0 20px;
+}
+
+.cancel-member-btn,
+.save-member-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.cancel-member-btn {
+  border: 1px solid #e2e8f0;
+
+  background: #ffffff;
+
+  color: #475569;
+}
+
+.cancel-member-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.save-member-btn {
+  border: 1px solid #4f46e5;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+}
+
+.save-member-btn:hover {
+  background: #4338ca;
+}
+
+.cancel-member-btn:active,
+.save-member-btn:active {
+  transform: translateY(1px);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 700px) {
+  .add-member-page {
+    max-width: none;
+  }
+
+  .member-form-section {
+    padding: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-full {
+    grid-column: auto;
+  }
+
+  .member-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-member-btn,
+  .save-member-btn {
+    width: 100%;
+  }
+}

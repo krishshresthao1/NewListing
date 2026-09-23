@@ -1,0 +1,394 @@
+.savings-entry-page {
+  padding: 32px;
+  min-height: 100%;
+  background: #f8fafc;
+}
+
+/* Header */
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.entry-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.entry-header-content h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.entry-header-content p {
+  margin: 0;
+
+  font-size: 14px;
+  color: #64748b;
+}
+
+.entry-back-btn {
+  border: 1px solid #dbe3ef;
+  background: #ffffff;
+  color: #334155;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.entry-back-btn:hover {
+  background: #f1f5f9;
+}
+
+/* Messages */
+
+.entry-error,
+.entry-success {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.entry-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.entry-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+
+/* Card */
+
+.entry-card {
+  margin-bottom: 24px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.entry-card-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.entry-card-header h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  color: #0f172a;
+}
+
+.entry-card-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Form */
+
+.entry-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label,
+.common-amount-input label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group label span {
+  color: #dc2626;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #334155;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+/* Common Amount */
+
+.common-amount-section {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding: 24px;
+}
+
+.common-amount-input {
+  width: 260px;
+}
+
+.amount-input-wrapper,
+.member-amount-input {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.amount-input-wrapper span,
+.member-amount-input span {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 11px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.amount-input-wrapper input,
+.member-amount-input input {
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 0 8px 8px 0;
+  outline: none;
+  padding: 0 12px;
+  color: #334155;
+  font-size: 14px;
+}
+
+.amount-input-wrapper input {
+  width: 180px;
+}
+
+.amount-input-wrapper input:focus,
+.member-amount-input input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+
+.apply-all-btn {
+  height: 40px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-all-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Table */
+
+.entry-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.entry-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.entry-table th {
+  padding: 15px 24px;
+  text-align: left;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.entry-table td {
+  padding: 15px 24px;
+  color: #475569;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.entry-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.entry-table td strong {
+  color: #0f172a;
+}
+
+.member-amount-input {
+  margin-top: 0;
+}
+
+.member-amount-input input {
+  width: 130px;
+}
+
+/* Total */
+
+.entry-table tfoot td {
+  padding: 18px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: none;
+  color: #0f172a;
+}
+
+.entry-total {
+  color: #2563eb !important;
+  font-size: 15px;
+}
+
+/* Actions */
+
+.entry-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cancel-entry-btn,
+.save-savings-btn {
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-entry-btn {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+
+.cancel-entry-btn:hover {
+  background: #f8fafc;
+}
+
+.save-savings-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+}
+
+.save-savings-btn:hover {
+  background: #1d4ed8;
+}
+
+.save-savings-btn:disabled,
+.cancel-entry-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading / Empty */
+
+.entry-loading,
+.entry-empty {
+  padding: 50px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.entry-empty {
+  color: #94a3b8;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .savings-entry-page {
+    padding: 20px;
+  }
+
+  .entry-header h1 {
+    font-size: 25px;
+  }
+
+  .entry-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .common-amount-section {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .common-amount-input {
+    width: 100%;
+  }
+
+  .amount-input-wrapper input {
+    width: 100%;
+  }
+
+  .apply-all-btn {
+    width: 100%;
+  }
+
+  .entry-table th,
+  .entry-table td {
+    padding: 14px 16px;
+  }
+
+  .entry-actions {
+    flex-direction: column-reverse;
+    padding: 18px 20px;
+  }
+
+  .cancel-entry-btn,
+  .save-savings-btn {
+    width: 100%;
+  }
+}

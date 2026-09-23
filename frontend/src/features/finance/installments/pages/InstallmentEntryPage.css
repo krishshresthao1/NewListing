@@ -1,0 +1,239 @@
+.installment-entry-page {
+  padding: 30px;
+  min-height: 100%;
+  background: #f8fafc;
+}
+
+/* Header */
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.entry-header-content h1 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.entry-header-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Back */
+
+.installment-entry-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 18px;
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.installment-entry-back-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Card */
+
+.installment-entry-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* Form */
+
+.installment-entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.entry-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.entry-form-group label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.entry-form-group input,
+.entry-form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.entry-form-group input:focus,
+.entry-form-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.entry-form-group select:disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.entry-form-group small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Loan reference */
+
+.loan-reference {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.loan-reference span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.loan-reference strong {
+  color: #2563eb;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+/* Actions */
+
+.entry-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.installment-entry-cancel-btn,
+.installment-entry-save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Cancel */
+
+.installment-entry-cancel-btn {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.installment-entry-cancel-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Save */
+
+.installment-entry-save-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.installment-entry-save-btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.installment-entry-save-btn:disabled,
+.installment-entry-cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading */
+
+.installment-entry-loading {
+  padding: 60px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .installment-entry-page {
+    padding: 20px;
+  }
+
+  .entry-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .installment-entry-card {
+    padding: 20px;
+  }
+
+  .entry-form-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .entry-form-actions {
+    flex-direction: column;
+  }
+
+  .installment-entry-cancel-btn,
+  .installment-entry-save-btn {
+    width: 100%;
+  }
+}
