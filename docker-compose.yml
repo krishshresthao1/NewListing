@@ -1,0 +1,33 @@
+services:
+
+  mongodb:
+    image: mongo
+    container_name: kachuli-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - kachuli-mongodb-data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+    container_name: kachuli-backend
+    ports:
+      - "8000:8000"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017
+      DATABASE_NAME: KachuliDb
+    depends_on:
+      - mongodb
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: kachuli-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  kachuli-mongodb-data:
