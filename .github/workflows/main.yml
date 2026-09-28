@@ -42,4 +42,4 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ${{ env.FRONEND_IMAGE }}
+          tags: ${{ env.FRONTEND_IMAGE }}
