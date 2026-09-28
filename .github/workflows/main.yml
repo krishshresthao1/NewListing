@@ -3,7 +3,7 @@ name: Kachuli Docker Build
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   docker-build:
