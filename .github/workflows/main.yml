@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   docker-build:
     runs-on: ubuntu-latest
@@ -16,9 +20,8 @@ jobs:
       - name: Prepare image names
         id: prepare-image-names
         run: |
-          REPO_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-          echo "BACKEND_IMAGE=ghcr.io/${REPO_NAME}-kachuli-backend:latest" >> $GITHUB_ENV
-          echo "FRONTEND_IMAGE=ghcr.io/${REPO_NAME}-kachuli-frontend:latest" >> $GITHUB_ENV
+          echo "BACKEND_IMAGE=ghcr.io/krishshresthao1/kachuli-backend:latest" >> $GITHUB_ENV
+          echo "FRONTEND_IMAGE=ghcr.io/krishshresthao1/kachuli-frontend:latest" >> $GITHUB_ENV
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
