@@ -1,0 +1,48 @@
+name: Kaachuli CI/CD Pipeline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  # 3. DEPLOY JOB
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose.yaml to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          source: "docker-compose.yaml"
+          target: "~/"
+
+      - name: Deploy on server via SSH
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            cd ~/kaachuli || mkdir -p ~/kaachuli && cd ~/kaachuli
+            > .env
+            
+            # Create .env file
+            echo "API_IMAGE_NAME=${{ needs.build.outputs.api_image }}" >> .env
+            echo "UI_IMAGE_NAME=${{ needs.build.outputs.ui_image }}" >> .env
+            echo "DB_CONNECTIONSTRING=${{ secrets.DB_CONNECTIONSTRING }}" >> .env
+            echo "API_BASE_URL=${{ secrets.API_BASE_URL }}" >> .env
+            
+            # Login and Deploy
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            docker compose down --remove-orphans
+            docker compose pull
+            docker compose up -d --force-recreate
