@@ -1,4 +1,4 @@
-name: Kaachuli CI/CD Pipeline
+name: Kachuli Deploy
 
 on:
   workflow_dispatch:
@@ -8,41 +8,59 @@ permissions:
   packages: write
 
 jobs:
-  # 3. DEPLOY JOB
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Copy docker-compose.yml to server
+      - name: Copy production Compose file to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
-          source: "docker-compose.yml"
+          source: "docker-compose.prod.yml"
           target: "~/"
 
       - name: Deploy on server via SSH
         uses: appleboy/ssh-action@v1.1.0
+        env:
+          BACKEND_IMAGE: ghcr.io/krishshresthao1/kachuli-backend:latest
+          FRONTEND_IMAGE: ghcr.io/krishshresthao1/kachuli-frontend:latest
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          GHCR_USERNAME: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
+          envs: BACKEND_IMAGE,FRONTEND_IMAGE,MONGODB_URI,GHCR_USERNAME,GHCR_TOKEN
+
           script: |
-            cd ~/kaachuli || mkdir -p ~/kaachuli && cd ~/kaachuli
-            > .env
-            
-            # Create .env file
-            echo "API_IMAGE_NAME=${{ needs.build.outputs.api_image }}" >> .env
-            echo "UI_IMAGE_NAME=${{ needs.build.outputs.ui_image }}" >> .env
-            echo "DB_CONNECTIONSTRING=${{ secrets.DB_CONNECTIONSTRING }}" >> .env
-            echo "API_BASE_URL=${{ secrets.API_BASE_URL }}" >> .env
-            
-            # Login and Deploy
-            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            
-            docker compose down --remove-orphans
-            docker compose pull
-            docker compose up -d --force-recreate
+            set -eu
+
+            mkdir -p ~/kachuli
+            mv ~/docker-compose.prod.yml ~/kachuli/docker-compose.prod.yml
+
+            cd ~/kachuli
+
+            umask 077
+
+            printf 'BACKEND_IMAGE=%s\n' "$BACKEND_IMAGE" > .env
+            printf 'FRONTEND_IMAGE=%s\n' "$FRONTEND_IMAGE" >> .env
+            printf 'MONGODB_URI=%s\n' "$MONGODB_URI" >> .env
+
+            echo "$GHCR_TOKEN" | docker login ghcr.io \
+              -u "$GHCR_USERNAME" \
+              --password-stdin
+
+            docker compose -f docker-compose.prod.yml pull
+
+            docker compose -f docker-compose.prod.yml up -d --remove-orphans
+
+            docker logout ghcr.io
+
+            docker image prune -f
