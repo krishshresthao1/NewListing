@@ -1,0 +1,19 @@
+services:
+  backend:
+    image: ${BACKEND_IMAGE}
+    container_name: kachuli-backend
+    ports:
+      - "8000:8000"
+    environment:
+      MONGODB_URI: ${MONGODB_URI}
+      DATABASE_NAME: KachuliDb
+    restart: unless-stopped
+
+  frontend:
+    image: ${FRONTEND_IMAGE}
+    container_name: kachuli-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
